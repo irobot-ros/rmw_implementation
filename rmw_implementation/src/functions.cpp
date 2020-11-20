@@ -605,31 +605,31 @@ RMW_INTERFACE_FN(
   rmw_subscription_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, void *))
+    const void *, EventsExecutorCallback, const void *, rmw_subscription_t *))
 
 RMW_INTERFACE_FN(
   rmw_service_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, void *))
+    const void *, EventsExecutorCallback, const void *, rmw_service_t *))
 
 RMW_INTERFACE_FN(
   rmw_client_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, void *))
+    const void *, EventsExecutorCallback, const void *, rmw_client_t *))
 
 RMW_INTERFACE_FN(
   rmw_guard_condition_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   5, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, void *, bool))
+    const void *, EventsExecutorCallback, const void *, rmw_guard_condition_t *, bool))
 
 RMW_INTERFACE_FN(
   rmw_event_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   5, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, void *, bool))
+    const void *, EventsExecutorCallback, const void *, rmw_event_t *, bool))
 
 #define GET_SYMBOL(x) symbol_ ## x = get_symbol(#x);
 
