@@ -602,34 +602,34 @@ RMW_INTERFACE_FN(
     rmw_topic_endpoint_info_array_t *))
 
 RMW_INTERFACE_FN(
-  rmw_subscription_set_events_executor_callback,
+  rmw_subscription_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, rmw_subscription_t *))
+    const void *, rmw_listener_cb_t, const void *, rmw_subscription_t *))
 
 RMW_INTERFACE_FN(
-  rmw_service_set_events_executor_callback,
+  rmw_service_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, rmw_service_t *))
+    const void *, rmw_listener_cb_t, const void *, rmw_service_t *))
 
 RMW_INTERFACE_FN(
-  rmw_client_set_events_executor_callback,
+  rmw_client_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, rmw_client_t *))
+    const void *, rmw_listener_cb_t, const void *, rmw_client_t *))
 
 RMW_INTERFACE_FN(
-  rmw_guard_condition_set_events_executor_callback,
+  rmw_guard_condition_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   5, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, rmw_guard_condition_t *, bool))
+    const void *, rmw_listener_cb_t, const void *, rmw_guard_condition_t *, bool))
 
 RMW_INTERFACE_FN(
-  rmw_event_set_events_executor_callback,
+  rmw_event_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   5, ARG_TYPES(
-    const void *, EventsExecutorCallback, const void *, rmw_event_t *, bool))
+    const void *, rmw_listener_cb_t, const void *, rmw_event_t *, bool))
 
 #define GET_SYMBOL(x) symbol_ ## x = get_symbol(#x);
 
@@ -708,11 +708,11 @@ void prefetch_symbols(void)
   GET_SYMBOL(rmw_set_log_severity)
   GET_SYMBOL(rmw_get_publishers_info_by_topic)
   GET_SYMBOL(rmw_get_subscriptions_info_by_topic)
-  GET_SYMBOL(rmw_subscription_set_events_executor_callback)
-  GET_SYMBOL(rmw_service_set_events_executor_callback)
-  GET_SYMBOL(rmw_client_set_events_executor_callback)
-  GET_SYMBOL(rmw_guard_condition_set_events_executor_callback)
-  GET_SYMBOL(rmw_event_set_events_executor_callback)
+  GET_SYMBOL(rmw_subscription_set_listener_callback)
+  GET_SYMBOL(rmw_service_set_listener_callback)
+  GET_SYMBOL(rmw_client_set_listener_callback)
+  GET_SYMBOL(rmw_guard_condition_set_listener_callback)
+  GET_SYMBOL(rmw_event_set_listener_callback)
 }
 
 void * symbol_rmw_init = nullptr;
