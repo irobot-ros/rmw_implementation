@@ -603,31 +603,31 @@ RMW_INTERFACE_FN(
   rmw_subscription_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    rmw_subscription_t *, rmw_listener_callback_t, const void *, const void *))
+    rmw_subscription_t *, rmw_listener_callback_t, void *, const void *))
 
 RMW_INTERFACE_FN(
   rmw_service_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    rmw_service_t *, rmw_listener_callback_t, const void *, const void *))
+    rmw_service_t *, rmw_listener_callback_t, void *, const void *))
 
 RMW_INTERFACE_FN(
   rmw_client_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    rmw_client_t *, rmw_listener_callback_t, const void *, const void *))
+    rmw_client_t *, rmw_listener_callback_t, void *, const void *))
 
 RMW_INTERFACE_FN(
   rmw_guard_condition_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   5, ARG_TYPES(
-    rmw_guard_condition_t *, rmw_listener_callback_t, const void *, const void *, bool))
+    rmw_guard_condition_t *, rmw_listener_callback_t, void *, const void *, bool))
 
 RMW_INTERFACE_FN(
   rmw_event_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   5, ARG_TYPES(
-    rmw_event_t *, rmw_listener_callback_t, const void *, const void *, bool))
+    rmw_event_t *, rmw_listener_callback_t, void *, const void *, bool))
 
 #define GET_SYMBOL(x) symbol_ ## x = get_symbol(#x);
 
