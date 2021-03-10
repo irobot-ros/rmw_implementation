@@ -600,6 +600,16 @@ RMW_INTERFACE_FN(
     rmw_topic_endpoint_info_array_t *))
 
 RMW_INTERFACE_FN(
+  rmw_qos_profile_check_compatible,
+  rmw_ret_t, RMW_RET_ERROR,
+  5, ARG_TYPES(
+    const rmw_qos_profile_t,
+    const rmw_qos_profile_t,
+    rmw_qos_compatibility_type_t *,
+    char *,
+    size_t))
+
+RMW_INTERFACE_FN(
   rmw_subscription_set_listener_callback,
   rmw_ret_t, RMW_RET_ERROR,
   3, ARG_TYPES(
@@ -706,11 +716,6 @@ void prefetch_symbols(void)
   GET_SYMBOL(rmw_set_log_severity)
   GET_SYMBOL(rmw_get_publishers_info_by_topic)
   GET_SYMBOL(rmw_get_subscriptions_info_by_topic)
-  GET_SYMBOL(rmw_subscription_set_listener_callback)
-  GET_SYMBOL(rmw_service_set_listener_callback)
-  GET_SYMBOL(rmw_client_set_listener_callback)
-  GET_SYMBOL(rmw_guard_condition_set_listener_callback)
-  GET_SYMBOL(rmw_event_set_listener_callback)
 }
 
 void * symbol_rmw_init = nullptr;
