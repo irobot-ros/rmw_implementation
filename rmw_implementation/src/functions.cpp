@@ -438,6 +438,11 @@ RMW_INTERFACE_FN(
   4, ARG_TYPES(const rmw_client_t *, rmw_service_info_t *, void *, bool *))
 
 RMW_INTERFACE_FN(
+  rmw_client_get_actual_qos,
+  rmw_ret_t, RMW_RET_ERROR,
+  2, ARG_TYPES(const rmw_client_t *, rmw_qos_profile_t *))
+
+RMW_INTERFACE_FN(
   rmw_create_service,
   rmw_service_t *, nullptr,
   4, ARG_TYPES(
@@ -458,6 +463,11 @@ RMW_INTERFACE_FN(
   rmw_send_response,
   rmw_ret_t, RMW_RET_ERROR,
   3, ARG_TYPES(const rmw_service_t *, rmw_request_id_t *, void *))
+
+RMW_INTERFACE_FN(
+  rmw_service_get_actual_qos,
+  rmw_ret_t, RMW_RET_ERROR,
+  2, ARG_TYPES(const rmw_service_t *, rmw_qos_profile_t *))
 
 RMW_INTERFACE_FN(
   rmw_take_event,
@@ -734,6 +744,8 @@ void prefetch_symbols(void)
   GET_SYMBOL(rmw_service_set_on_new_request_callback)
   GET_SYMBOL(rmw_client_set_on_new_response_callback)
   GET_SYMBOL(rmw_event_set_callback)
+  GET_SYMBOL(rmw_service_get_actual_qos);
+  GET_SYMBOL(rmw_client_get_actual_qos);
 }
 
 void * symbol_rmw_init = nullptr;
@@ -830,6 +842,8 @@ unload_library()
   symbol_rmw_get_gid_for_publisher = nullptr;
   symbol_rmw_compare_gids_equal = nullptr;
   symbol_rmw_service_server_is_available = nullptr;
+  symbol_rmw_service_get_actual_qos = nullptr;
+  symbol_rmw_client_get_actual_qos = nullptr;
   symbol_rmw_set_log_severity = nullptr;
   symbol_rmw_get_publishers_info_by_topic = nullptr;
   symbol_rmw_get_subscriptions_info_by_topic = nullptr;
